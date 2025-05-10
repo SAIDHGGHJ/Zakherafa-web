@@ -1,0 +1,38 @@
+name: نشر الموقع تلقائيًا
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: استنساخ المستودع
+        uses: actions/checkout@v3
+
+      - name: إعداد Node.js (إذا كنت تستخدمه)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: تثبيت المتطلبات (Jekyll أو npm)
+        run: |
+          gem install jekyll bundler
+          npm install   # إذا كنت تستخدم JavaScript
+
+      - name: بناء الموقع
+        run: |
+          jekyll build # إذا كان الموقع يعتمد على Jekyll
+          npm run build # إذا كنت تستخدم React أو Vue
+
+      - name: نشر الموقع على GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site  # مجلد الإخراج لـ Jekyll أو `build` لمشاريع JavaScript
