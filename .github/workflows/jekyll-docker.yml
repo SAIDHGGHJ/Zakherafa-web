@@ -1,38 +1,33 @@
-name: نشر الموقع تلقائيًا
+name: نشر موقع Jekyll تلقائيًا
 
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - main  # تأكد أن الفرع الرئيسي هو 'main'
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: استنساخ المستودع
         uses: actions/checkout@v3
 
-      - name: إعداد Node.js (إذا كنت تستخدمه)
-        uses: actions/setup-node@v3
+      - name: إعداد Ruby و Jekyll
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: '18'
+          ruby-version: '3.1'
 
-      - name: تثبيت المتطلبات (Jekyll أو npm)
+      - name: تثبيت Jekyll والاعتماديات
         run: |
-          gem install jekyll bundler
-          npm install   # إذا كنت تستخدم JavaScript
+          gem install bundler
+          bundle install
 
-      - name: بناء الموقع
-        run: |
-          jekyll build # إذا كان الموقع يعتمد على Jekyll
-          npm run build # إذا كنت تستخدم React أو Vue
+      - name: بناء الموقع باستخدام Jekyll
+        run: bundle exec jekyll build
 
-      - name: نشر الموقع على GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: نشر الموقع إلى GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site  # مجلد الإخراج لـ Jekyll أو `build` لمشاريع JavaScript
+          branch: gh-pages  # الفرع الذي سيتم نشر الموقع فيه
+          folder: _site  # تأكد أن هذا هو مجلد الإخراج لـ Jekyll
