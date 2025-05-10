@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل الأسماء إلى زخرفة جميلة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar-container">
+        <div class="sidebar">
+            <button class="sidebar-toggle-btn">☰</button>
+            <div class="sidebar-content">
+                <h2>معلومات</h2>
+                <ul class="info-list">
+                    <li><a href="#من-نحن">من نحن</a></li>
+                    <li><a href="#سياسة-الخصوصية">سياسة الخصوصية</a></li>
+                    <li><a href="#اتصل-بنا">اتصل بنا</a></li>
+                    <li><a href="#اتفاقية-الاستخدام">اتفاقية الاستخدام</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="logo">
+                <img src="https://www.freepik.com/icon/hexagon_11067255#fromView=search&page=1&position=42&uuid=cce26ce8-d39f-483f-bbce-7a3d1f62ae9f" alt="شعار">
+                <h1>said misbah</h1>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100079262367567" target="_blank"><img src="facebook_icon.png" alt="فيسبوك"></a>
+                <a href="https://whatsapp.com/dl/" target="_blank"><img src="whatsapp_icon.png" alt="واتساب"></a>
+            </div>
+        </header>
+
+        <section class=" زخرفة-الأسماء">
+            <h2>زخرفة الأسماء</h2>
+            <div class="input-area">
+                <input type="text" id="inputText" placeholder="اكتب اسمك هنا">
+                <div class="controls">
+                    <select id="filterType">
+                        <option value="">تصفية حسب نوع الزخرفة</option>
+                        <option value="arabic">زخرفة عربية (20 نوع)</option>
+                        <option value="girls">زخرفة أسماء بنات (20 نوع)</option>
+                        <option value="english">زخرفة إنجليزية (20 نوع)</option>
+                        <option value="islamic">زخرفة إسلامية (20 نوع)</option>
+                        <option value="style1">نمط 1</option>
+                        <option value="style2">نمط 2</option>
+                        <option value="style3">نمط 3</option>
+                        <option value="style4">نمط 4</option>
+                        <option value="style5">نمط 5</option>
+                        <option value="style6">نمط 6</option>
+                        <option value="style7">نمط 7</option>
+                        <option value="style8">نمط 8</option>
+                        <option value="style9">نمط 9</option>
+                        <option value="style10">نمط 10</option>
+                        </select>
+                    <select id="fontSize">
+                        <option value="x-small">صغير جداً</option>
+                        <option value="small">صغير</option>
+                        <option value="medium" selected>متوسط</option>
+                        <option value="large">كبير</option>
+                        <option value="x-large">كبير جداً</option>
+                    </select>
+                    <button onclick="generateDecorations()">زخرف</button>
+                </div>
+            </div>
+            <div class="output-area">
+                <div id="decoratedTextContainer">
+                    </div>
+                <button onclick="copyText()" disabled id="copyButton">نسخ</button>
+            </div>
+        </section>
+
+        <section class="popular-names">
+            <h2>كلمات شائعة</h2>
+            <div class="popular-list">
+                </div>
+        </section>
+
+        <section id="من-نحن" class="info-section">
+            <h2>من نحن</h2>
+            <p>نحن فريق شغوف بالإبداع الرقمي، هدفنا تقديم تجربة فريدة لكل من يبحث عن التميز في اسمه! في منصتنا "زخرفة الأسماء"، نوفر أدوات ذكية وسهلة الاستخدام لزخرفة الأسماء بالعربية والإنجليزية، بخطوط وأشكال متنوعة تناسب جميع الأذواق.</p>
+            <p>نؤمن بأن الاسم هو هوية، وأن لكل اسم لمسة خاصة تستحق أن تبرز بأجمل صورة، سواء كنت تصمم توقيعًا، تبحث عن اسم مستعار للألعاب، أو ترغب في لمسة فنية على حساباتك على مواقع التواصل.</p>
+            <p>نحرص على تحديث زخرفاتنا باستمرار، وتقديم خيارات آمنة وسريعة دون الحاجة إلى تحميل أو تسجيل.</p>
+            <p>انضم إلينا وتميّز باسمك، فالإبداع يبدأ من أول حرف!</p>
+        </section>
+
+        <section id="سياسة-الخصوصية" class="info-section">
+            <h2>سياسة الخصوصية</h2>
+            <p>خصوصيتك تهمنا، ونحن ملتزمون بحماية بياناتك وضمان تجربة آمنة أثناء استخدامك لمنصتنا "زخرفة الأسماء". تهدف هذه السياسة إلى توضيح كيفية جمع واستخدام وحماية المعلومات التي قد يتم جمعها أثناء تصفحك للموقع أو استخدامك للتطبيق.</p>
+            <h3>1. جمع المعلومات</h3>
+            <p>نحن لا نجمع أي معلومات شخصية (مثل الاسم، البريد الإلكتروني، رقم الهاتف) عند استخدام أدوات الزخرفة. قد يتم جمع بعض البيانات غير الشخصية مثل نوع المتصفح، نوع الجهاز، ووقت الاستخدام بهدف تحسين الأداء والخدمة.</p>
+            <h3>2. استخدام المعلومات</h3>
+            <p>يتم استخدام البيانات غير الشخصية لأغراض إحصائية فقط، مثل تحسين تجربة المستخدم وتطوير الأدوات بناءً على سلوك الاستخدام العام.</p>
+            <h3>3. ملفات تعريف الارتباط (Cookies)</h3>
+            <p>قد نستخدم ملفات تعريف الارتباط لتخزين تفضيلات المستخدم وتحليل استخدام الموقع بشكل أفضل. يمكنك تعطيلها من إعدادات المتصفح في أي وقت.</p>
+            <h3>4. روابط خارجية</h3>
+            <p>قد يحتوي الموقع على روابط لمواقع أو تطبيقات خارجية. نحن غير مسؤولين عن محتوى أو سياسة الخصوصية الخاصة بتلك الجهات.</p>
+            <h3>5. أمان المعلومات</h3>
+            <p>نحرص على اتخاذ التدابير الأمنية المناسبة لحماية بيانات المستخدم، لكننا نذكّرك بأن الإنترنت ليس وسيلة آمنة بنسبة 100%.</p>
+            <h3>6. موافقتك</h3>
+            <p>باستخدامك لخدماتنا، فإنك توافق على سياسة الخصوصية هذه.</p>
+            <h3>7. التعديلات</h3>
+            <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. سيتم نشر أي تغيير في هذه الصفحة مع تحديث تاريخ التعديل.</p>
+            <p>تاريخ آخر تحديث: 10 مايو</p>
+        </section>
+
+        <section id="اتصل-بنا" class="info-section">
+            <h2>اتصل بنا</h2>
+            <p>نحن دائمًا سعداء بالتواصل معك! إذا كان لديك أي استفسار، اقتراح، ملاحظة، أو واجهت مشكلة أثناء استخدامك لمنصة "زخرفة الأسماء"، فلا تتردد في مراسلتنا.</p>
+            <p>البريد الإلكتروني: saidmisbah2007@gmail.com</p>
+            <p>نحرص على الرد على جميع الرسائل في أقرب وقت ممكن خلال 24 إلى 48 ساعة.</p>
+            <p>شكرًا لثقتك بنا!</p>
+        </section>
+
+        <section id="اتفاقية-الاستخدام" class="info-section">
+            <h2>اتفاقية الاستخدام</h2>
+            <p>يُسمح لك باستخدام أدوات الزخرفة لأغراض شخصية وغير تجارية.</p>
+            <p>يُمنع إعادة نشر أو توزيع المحتوى بشكل جزئي أو كلي دون إذن مكتوب.</p>
+            <p>يُحظر استخدام الموقع لأي أغراض ضارة أو غير قانونية أو مخالفة للأخلاق العامة.</p>
+            <h3>3. الملكية الفكرية</h3>
+            <p>جميع حقوق التصميم، والأدوات، والمحتوى النصي، والرسومي في المنصة محفوظة ولا يجوز نسخها أو استخدامها لأغراض تجارية بدون إذن.</p>
+            <h3>4. التعديلات على الخدمة</h3>
+            <p>نحتفظ بالحق في تعديل أو إيقاف الخدمة مؤقتًا أو دائمًا دون إشعار مسبق، ولن نكون مسؤولين عن أي ضرر ناتج عن ذلك.</p>
+            <h3>5. حدود المسؤولية</h3>
+            <p>نحن لا نضمن أن الخدمة ستكون خالية من الأخطاء أو الانقطاعات، كما لا نتحمل أي مسؤولية عن استخدامك للموقع أو نتائج الزخرفة الناتجة.</p>
+            <h3>6. التعديلات على الاتفاقية</h3>
+            <p>يجوز لنا تعديل هذه الاتفاقية في أي وقت. استمرارك في استخدام الموقع بعد التعديلات يعني موافقتك الضمنية على التغييرات.</p>
+            <h3>7. التواصل</h3>
+            <p>لأي استفسار حول هذه الاتفاقية، يمكنك مراسلتنا عبر البريد: saidmisbah2007@gmail.com</p>
+            <p>تاريخ آخر تحديث: 10 مايو</p>
+        </section>
+    </div>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggleBtn = document.querySelector('.sidebar-toggle-btn');
+        const mainContent = document.querySelector('.main-content');
+        const inputText = document.getElementById('inputText');
+        const decoratedTextContainer = document.getElementById('decoratedTextContainer');
+        const copyButton = document.getElementById('copyButton');
+        const filterType = document.getElementById('filterType');
+        const fontSizeSelect = document.getElementById('fontSize');
+        const popularList = document.querySelector('.popular-list');
+
+        sidebarToggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            mainContent.classList.toggle('shifted');
+        });
+
+        function generateDecorations() {
+            const text = inputText.value;
+            const selectedFilter = filterType.value;
+            const selectedFontSize = fontSizeSelect.value;
+
+            // هنا يجب إضافة منطق الزخرفة بناءً على النص والفلتر المحدد
+            // هذه مجرد أمثلة بسيطة
+            let decorations = [];
+            if (text) {
+                if (selectedFilter === 'arabic') {
+                    decorations.push(`★彡${text}彡★`);
+                    decorations.push(`꧁ ${text} ꧂`);
+                    // إضافة المزيد من الزخارف العربية
+                } else if (selectedFilter === 'girls') {
+                    decorations.push(`♥${text}♥`);
+                    decorations.push(`(¯`·._.·( ${text} )·._.·´¯)`);
+                    // إضافة المزيد من زخارف أسماء البنات
+                } else if (selectedFilter === 'english') {
+                    decorations.push(`★·.·´¯\`·.·★ ${text} ★·.·\`¯´·.·★`);
+                    decorations.push(`[̲̅$̲̅(̲̅${text}̲̅)$̲̅]`);
+                    // إضافة المزيد من الزخارف الإنجليزية
+                } else if (selectedFilter === 'islamic') {
+                    decorations.push(`ٱللَّهُ ${text} ٱللَّهُ`);
+                    decorations.push(`ﷺ ${text} ﷺ`);
+                    // إضافة المزيد من الزخارف الإسلامية
+                } else {
+                    decorations.push(`✨${text}✨`);
+                    decorations.push(`💫${text}💫`);
+                    // إضافة زخارف افتراضية
+                }
+
+                decoratedTextContainer.innerHTML = '';
+                decorations.forEach(deco => {
+                    const span = document.createElement('span');
+                    span.textContent = deco;
+                    span.style.fontSize = getFontSize(selectedFontSize);
+                    decoratedTextContainer.appendChild(span);
+                    const copyButtonForDeco = document.createElement('button');
+                    copyButtonForDeco.textContent = 'نسخ';
+                    copyButtonForDeco.onclick = () => copySpecificText(deco);
+                    decoratedTextContainer.appendChild(copyButtonForDeco);
+                    decoratedTextContainer.appendChild(document.createElement('br'));
+                });
+                copyButton.disabled = false;
+            } else {
+                decoratedTextContainer.innerHTML = '';
+                copyButton.disabled = true;
+            }
+        }
+
+        function copyText() {
+            const textToCopy = decoratedTextContainer.innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('تم نسخ النص!');
+            }).catch(err => {
+                console.error('فشل في نسخ النص: ', err);
+            });
+        }
+
+        function copySpecificText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`تم نسخ: ${text}`);
+            }).catch(err => {
+                console.error('فشل في نسخ النص: ', err);
+            });
+        }
+
+        function getFontSize(size) {
+            switch (size) {
+                case 'x-small': return '0.7em';
+                case 'small': return '0.9em';
+                case 'large': return '1.2em';
+                case 'x-large': return '1.5em';
+                default: return '1em';
+            }
+        }
+
+        // إضافة الكلمات الشائعة أفقياً مع زر نسخ
+        const popularWords = [
+            "الحب", "السلام", "الأمل", "السعادة", "الجمال", "الصداقة", "العائلة", "الحياة", "الشمس", "القمر",
+            "Love", "Peace", "Hope", "Happiness", "Beauty", "Friendship", "Family", "Life", "Sun", "Moon"
+        ];
+
+        popularWords.forEach(word => {
+            const wordContainer = document.createElement('div');
+            wordContainer.classList.add('popular-word');
+            const wordSpan = document.createElement('span');
+            wordSpan.textContent = word;
+            const copyWordButton = document.createElement('button');
+            copyWordButton.textContent = 'نسخ';
+            copyWordButton.onclick = () => copySpecificText(word);
+            wordContainer.appendChild(wordSpan);
+            wordContainer.appendChild(copyWordButton);
+            popularList.appendChild(wordContainer);
+        });
+    </script>
+</body>
+</html>
